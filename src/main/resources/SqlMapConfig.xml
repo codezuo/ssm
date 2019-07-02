@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--整合后该xml文件处理配置全局属性以外，可以舍弃该文件-->
+<configuration>
+    <!--将config.properties文件中的内容加载进去，实现动态绑定-->
+  <!--  <properties resource="config.properties"/>-->
+
+    <!--配置全局属性-->
+    <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true"/>
+    </settings>
+
+    <!--设置别名-->
+    <typeAliases>
+        <typeAlias type="com.jgsu.domain.Account" alias="account"/>
+    </typeAliases>
+
+    <!--配置环境-->
+    <!--<environments default="development">
+    <environment id="development">
+    <transactionManager type="JDBC"></transactionManager>
+    <dataSource type="POOLED">
+    <property name="driver" value="${driver}" />
+    <property name="url" value="${url}" />
+    <property name="username" value="${username}" />
+    <property name="password" value="${password}" />
+</dataSource>
+</environment>
+</environments>-->
+    <!--引入映射文件的位置-->
+    <!-- <mappers>
+     <mapper resource="mapper/AccountDao.xml"/>
+ </mappers>-->
+</configuration>

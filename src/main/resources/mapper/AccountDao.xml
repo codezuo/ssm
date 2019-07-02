@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jgsu.dao.AccountDao">
+    <!--执行查询全部语句-->
+    <select id="findAll" resultType="account">
+        select * from account
+    </select>
+
+    <!--执行插入数据-->
+    <insert id="saveAccount" parameterType="account">
+        insert into account (name,money) values(#{name},#{money})
+    </insert>
+</mapper>
