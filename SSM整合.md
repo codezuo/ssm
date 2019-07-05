@@ -1,6 +1,6 @@
 #<div align="center" style="color:red">实现spring+springmvc+mybatis的整合</div>
 ##1.这是我搭建的完整目录结构
-![](./images/SSM整合结构.png)
+![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/SSM%E6%95%B4%E5%90%88%E7%BB%93%E6%9E%84.png)
 
 ##2.具体代码
 ###2.1整合所需要引入的依赖有
@@ -230,10 +230,10 @@ public interface AccountDao {
 ####1.以下是sql代码的.xml文件的位置
 <div style="color:red">注:SQL代码的.xml文件名要与dao中对应的类名一致,如：上述dao层是AccountDao,则要以AccountDao.xml命名</div>
 
-![Image text](ssm/图片/SQL代码位置(在.xml文件中的).png)
+![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/SQLCode.png)
 ###2.6 service层(springMVC框架技术)
 ####1.如下图<div style="color:red">接口部分编写方法，实现接口的类主要调用接口的方法，通过这样降低代码之间的耦合度，便于增加或减少方法</div>
-![](.\images\servcice层.png)
+![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/servciceCode.png)
 
 ####2.AccountService代码如下
 ```
