@@ -154,13 +154,6 @@ account/save" method="post">
 </body>
 </html>
 ```
-####效果如下:
-<form action="
-account/save" method="post">
-    姓名:<input type="text" name="name">
-    金额:<input type="text" name="money">
-    <input type="submit" value="保存">
-</form>
 
 ###2.3 domain(实体层)
 <div style="color:red">在pom.xml中引入lombok依赖，然后在实体类上添加@Data注解，可省略set/get方法和toString方法</div>
