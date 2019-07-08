@@ -1,9 +1,9 @@
-#<div align="center" style="color:red">实现spring+springmvc+mybatis的整合</div>
-##1.这是我搭建的完整目录结构
+# 实现spring+springmvc+mybatis的整合
+## 1.这是我搭建的完整目录结构
 ![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/SSM%E6%95%B4%E5%90%88%E7%BB%93%E6%9E%84.png)
 
-##2.具体代码
-###2.1整合所需要引入的依赖有
+## 2.具体代码
+### 2.1整合所需要引入的依赖有
 <!-- 单元测试 -->
     <dependency>
       <groupId>junit</groupId>
@@ -135,7 +135,7 @@
       <artifactId>commons-collections</artifactId>
       <version>3.2</version>
     </dependency>
-###2.2前端界面代码(很简单的)
+### 2.2前端界面代码(很简单的)
 ```
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -155,7 +155,7 @@ account/save" method="post">
 </html>
 ```
 
-###2.3 domain(实体层)
+### 2.3 domain(实体层)
 <div style="color:red">在pom.xml中引入lombok依赖，然后在实体类上添加@Data注解，可省略set/get方法和toString方法</div>
 ```
 import lombok.Data;
@@ -171,7 +171,7 @@ public class Account implements Serializable {
     private Double money;
 }
 ```
-###2.4 controller(web层)
+### 2.4 controller(web层)
 <div style="color:red">这是前后端数据交互的层，主要用到springMvc框架技术</div>
 这里我只实现了插入数据和查询数据，修改数据和删除数据方法类似
 ```
@@ -206,7 +206,7 @@ public class AccountController {
 
 }
 ```
-###2.5 dao层(也就是mapper层)
+### 2.5 dao层(也就是mapper层)
 <div style="color:red">这里是实现后端与数据库连接的方法，主要运用到mybatis框架知识</div>
 可以使用注解的方式写SQL代码(查询语句简单,且量少)，也可以在.xml文件中写SQL代码(推荐)
 ```
@@ -226,16 +226,16 @@ public interface AccountDao {
     public void saveAccount(Account account);
 }
 ```
-###2.5.1 在.xml文件中编写SQL代码
-####1.以下是sql代码的.xml文件的位置
+### 2.5.1 在.xml文件中编写SQL代码
+#### 1.以下是sql代码的.xml文件的位置
 <div style="color:red">注:SQL代码的.xml文件名要与dao中对应的类名一致,如：上述dao层是AccountDao,则要以AccountDao.xml命名</div>
 
 ![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/SQLCode.png)
-###2.6 service层(springMVC框架技术)
+### 2.6 service层(springMVC框架技术)
 ####1.如下图<div style="color:red">接口部分编写方法，实现接口的类主要调用接口的方法，通过这样降低代码之间的耦合度，便于增加或减少方法</div>
 ![](https://github.com/zuojunZzz/ssm/blob/master/%E5%9B%BE%E7%89%87/servciceCode.png)
 
-####2.AccountService代码如下
+#### 2.AccountService代码如下
 ```
 public interface AccountService {
     /*查询账户的所有信息有*/
@@ -246,7 +246,7 @@ public interface AccountService {
 }
 
 ```
-####3.AccountServiceImpl代码如下
+#### 3.AccountServiceImpl代码如下
 ```
 @Service("accountService")//将该类交给springIOC容器保管
 public class AccountServiceImpl implements AccountService {
@@ -338,7 +338,7 @@ public class AccountServiceImpl implements AccountService {
 </beans>
 
 ```
-###2.7 log4j.properties
+### 2.7 log4j.properties
 <div style="color:red">注:配置日志文件，便于打印日志</div>
 ```
 log4j.rootLogger=INFO,Console,File  
@@ -361,7 +361,7 @@ log4j.appender.File.layout = org.apache.log4j.PatternLayout
 log4j.appender.File.layout.ConversionPattern =[%p] [%d{yyyy-MM-dd HH\:mm\:ss}][%c]%m%n
 ```
 
-###2.8 config.properties
+### 2.8 config.properties
 <div style="color:red">连接数据库的基本信息</div>
 ```
 //config.properties中创建数据库连接路线
@@ -371,7 +371,7 @@ username=root
 password=xxxx
 ```
 
-###2.9 springmvc.xml
+### 2.9 springmvc.xml
 <div style="color:red">编写springmvc相关配置</div>
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -413,6 +413,6 @@ password=xxxx
 ========================
 
 
-####<p align="right" style="color:red">座右铭:日积月累才能拥有真本领，多思考，多实践</p>
+#### <p align="right" style="color:red">座右铭:日积月累才能拥有真本领，多思考，多实践</p>
 
-#####<p align="right" style="color:red">作者:zuojunZzz</p>
+##### <p align="right" style="color:red">作者:zuojunZzz</p>
